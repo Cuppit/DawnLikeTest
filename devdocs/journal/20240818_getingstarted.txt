@@ -1,0 +1,8 @@
+11:25
+The objective is to make a simple skeleton of a turn-based roguelike that can be built off of in the future.  Today I'm just focusing on understanding how to work with tilesheets, something I've never really been good at.  But making a game look good will be easier in the future if that is first established.  
+
+Reading through Godot's TileMap documentation:
+https://docs.godotengine.org/en/stable/tutorials/2d/using_tilesets.html#doc-using-tilesets
+
+16:42
+Took a long break but got back to it around 16:00...made a generic 'entity' scene called "fishy" to demonstrate how to use tile sheets as frames for animations.  Seems tedious depending on how your tilesheet is structured, and it also had problems importing the '.tres' file created.  Had to directly import the '.png' file instead, which seemed to invalidate all the work messing with TileMap scenes etc...will keep experimenting.
