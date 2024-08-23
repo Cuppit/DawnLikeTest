@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/SDS_8x8.ttf-2adca97a145f9f1cbe1e1e96b4d70535.
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
