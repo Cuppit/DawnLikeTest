@@ -1,7 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvcxv506ck6m7"]
+[gd_scene load_steps=9 format=3 uid="uid://dvcxv506ck6m7"]
 
 [ext_resource type="Texture2D" uid="uid://0ctfplv4ym1b" path="res://ModdedResources/Characters/aquatic0-1.png" id="1_nnqv6"]
 [ext_resource type="Script" path="res://fishy.gd" id="1_qk1ta"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sxis"]
+atlas = ExtResource("1_nnqv6")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi45j"]
+atlas = ExtResource("1_nnqv6")
+region = Rect2(224, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k34go"]
 atlas = ExtResource("1_nnqv6")
@@ -13,7 +21,13 @@ region = Rect2(208, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_moyk5"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sxis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi45j")
+}],
 "loop": true,
 "name": &"jellyfish",
 "speed": 5.0
