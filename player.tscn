@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxhb8w8424rqi"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_kbdqb"]
+[ext_resource type="Texture2D" uid="uid://0ctfplv4ym1b" path="res://ModdedResources/Characters/aquatic0-1.png" id="2_2rnx2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn3ol"]
+atlas = ExtResource("2_2rnx2")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1r5t"]
+atlas = ExtResource("2_2rnx2")
+region = Rect2(208, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_44h2m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn3ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1r5t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bpgp"]
+size = Vector2(16, 16)
+
+[node name="Player" type="Area2D"]
+texture_filter = 1
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_kbdqb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_44h2m")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8bpgp")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)

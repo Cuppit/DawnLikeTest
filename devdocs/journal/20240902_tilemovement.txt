@@ -1,0 +1,12 @@
+--22:00 hrs--
+
+So I think I figured out how to implement tile based movement using TileMapLayer, but I wonder if it's the right way now that I think about it.  Shouldn't movement and positioning be wholly dependent on logical locales instead of explicitly defined ones?  This will make the game engine agnostic, and Godot will primarily serve as a kind of "front-end" for the core game. 
+
+But now we need to make an engine / script module to represent it.  Let's take a crack at it today. 
+
+--22:44 hrs--
+
+It occurred to me what I'm trying to do doesn't really need all the bells and whistles of Godot; if I'm just trying to make a top-down 2D grid-based, turn-based roguelike, there's no need for messing with collision detection; all the logic of "can move there / can't move there" can be bound by the rules of the game itself; all Godot really offers for a roguelike in that case is a graphical frontend and UI.  And here I spent the past few weeks trying to figure out how to manage collision physics for basically nothing?  
+
+
+Well, let's see what we can get with this.  Maybe it will become more obvious what works and what doesn't as we build some kind of actual "game" around the shell that's been established today.
