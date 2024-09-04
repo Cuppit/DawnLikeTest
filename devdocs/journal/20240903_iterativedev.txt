@@ -1,0 +1,5 @@
+22:50
+
+Building on what's been established, I want to generalize; make a generic 'entity' or 'character' scene/class, from which everything is based on.
+
+Each Floor will track a list of entities.  But first, need to better understand the difference between 'class' 'scene' and 'node' in godot because those concepts still seem nebulous.
