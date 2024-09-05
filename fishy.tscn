@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvcxv506ck6m7"]
+[gd_scene load_steps=7 format=3 uid="uid://dvcxv506ck6m7"]
 
 [ext_resource type="Texture2D" uid="uid://0ctfplv4ym1b" path="res://ModdedResources/Characters/aquatic0-1.png" id="1_nnqv6"]
 [ext_resource type="Script" path="res://fishy.gd" id="1_qk1ta"]
@@ -10,14 +10,6 @@ region = Rect2(96, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hi45j"]
 atlas = ExtResource("1_nnqv6")
 region = Rect2(224, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k34go"]
-atlas = ExtResource("1_nnqv6")
-region = Rect2(80, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_esvoj"]
-atlas = ExtResource("1_nnqv6")
-region = Rect2(208, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_moyk5"]
 animations = [{
@@ -31,20 +23,10 @@ animations = [{
 "loop": true,
 "name": &"jellyfish",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k34go")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_esvoj")
-}],
-"loop": true,
-"name": &"red_whale",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbcwm"]
+size = Vector2(16, 16)
 
 [node name="Fishy" type="Area2D"]
 position = Vector2(50, 50)
@@ -52,9 +34,9 @@ script = ExtResource("1_qk1ta")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_moyk5")
 animation = &"jellyfish"
+autoplay = "jellyfish"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_fbcwm")

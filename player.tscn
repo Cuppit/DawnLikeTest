@@ -39,9 +39,11 @@ sprite_frames = SubResource("SpriteFrames_44h2m")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_8bpgp")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

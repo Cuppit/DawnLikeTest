@@ -1,0 +1,12 @@
+---23:11--
+"Folks, I called this meeting today to talk about 'pathing'."
+
+I want to add npc entities and give them an a* search implementation that lets them search within their vision radius for the player entity, and move towards them.  But first I'd also really like to implement diagonal movement.  Maybe I'll work on that first.
+
+--23:38--
+So diagonal movement was mostly easy, but can't go around corners because of how collision works.  So next prototype will try to do away with Godot-engine collision detection altogether...really why did I think that would be a good idea in retrospect? 
+
+For now, want to try and create other entities.  Will refer to dodge the creeps to get info on what's colliding with what and write logic (e.g. NPC walks into player, and inflicts damage)
+
+--23:55--
+Using RayCast2D as a collision detector works with other Area2Ds, but there's a setting for it you have to explicitly flip on in the editor.  Praise the Lord for ChatGPT that streamlines discovering these facts.  But maybe that's degrading my ability to use a reference manual.  Well, we'll see what happens in the end.
