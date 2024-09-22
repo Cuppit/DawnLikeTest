@@ -1,0 +1,74 @@
+{
+	"sheets": [
+		{
+			"name": "character",
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "name",
+					"opt": true,
+					"display": null
+				},
+				{
+					"typeStr": "3",
+					"name": "hp"
+				},
+				{
+					"typeStr": "1",
+					"name": "item",
+					"opt": true,
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"hp": 5,
+					"name": "Shopkeeper",
+					"item": "potion"
+				},
+				{
+					"hp": 1,
+					"name": "Baba",
+					"item": "fur"
+				},
+				{
+					"hp": 3,
+					"name": "Goblin",
+					"item": "dagger"
+				}
+			],
+			"separators": [],
+			"props": {}
+		},
+		{
+			"name": "room",
+			"columns": [
+				{
+					"typeStr": "1",
+					"name": "Name",
+					"display": null
+				},
+				{
+					"typeStr": "1",
+					"name": "Description",
+					"opt": true,
+					"display": null
+				}
+			],
+			"lines": [
+				{
+					"Name": "Shop",
+					"Description": "This is the shopkeeper's shop.  The Town Square is outside."
+				},
+				{
+					"Name": "Town Square",
+					"Description": "This is the town square.  The shop entrance is close by."
+				}
+			],
+			"separators": [],
+			"props": {}
+		}
+	],
+	"customTypes": [],
+	"compress": false
+}
