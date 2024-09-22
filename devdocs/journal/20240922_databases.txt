@@ -1,0 +1,59 @@
+11:03 
+
+Godot is mainly serving as the visual presentation for the underlying game.  It's job is to load the game, and manage player input and game state.  So, all of the game data needs to be in a separate form, today we're experimenting with .json.  A simple DB using CastleDB (http://castledb.org) has been created, now we're looking into methods of loading the data into the game such that it can be used.
+
+12:21 
+
+After some research we're just going with this method outlined by user Queble on YouTube:
+https://www.youtube.com/watch?v=dDe0x1S2y64
+
+Important note: 
+	-created "Singletons" folder (This is a Godot-specific concept, but essentially "Global" code is used through something called "singletons"
+	-added "StaticData.gd" script (JSON loading functionality will go here)
+	-Under Project Settings -> Globals -> Autoload, added "StaticData" as a script that will be "Auto Loaded" which makes it global (???)
+
+
+...
+
+15:00
+After a break to take care of some other stuff, decided to get back into it.  So Godot is parsing the data in an organized and accessible fashion, although the layers of depth CastleDB organizes it's data in a "pseudo-tabular" form complicates things slightly.  Pressing forward means designing a custom script in Godot with functions solely meant to parse the CastleDB.  But before I can write something like that, I need to decide on a standard for how to organize data.
+
+Here's a draft of how to organize a generic roguelike template of data:
+
+PROBLEM: how to associate rooms with specific tiles in the Godot tilesets??  In fact, how to associate assets with 
+
+
+[DB]  <--> [Asset linker???] <--> [Godot]
+
+No, this is rediculous.  INSTEAD: Godot will have a front-end script that chooses assets based on the names of places/things in the database.
+
+Let's talk more about this frontend.  
+
+FRONTEND
+
+Components:
+	-FloorManager
+		-Floor (tiles placed based on level generator)
+		-ObjectManager (generates and tracks all objects)
+		-CharacterManager (generartes and tracks all characters)
+
+	-LevelGenerator (generates a floor based on given parameters)
+
+So...individual tiles can be accessed / painted using the atlas coordinates of a tile in it's respective tile set.  So how do you associate map specifications with individual tiles?  You need to define where those coordinates are.  Hard coded?  By hand?  Let's try it.  
+
+Define process:
+
+-Game starts
+-start level is generated
+	-instructions for building the tilemap are generated
+		-What do these instructions look like?  How are they built?
+	-individual tiles are set based on instructions in tilemap
+	-characters are generated and placed in coordinates based on generated level parameters
+	-objects the same way
+	-player character is put in the start spot
+
+...-------...-----
+
+17:48
+
+gonna call it for now, might try some more later
